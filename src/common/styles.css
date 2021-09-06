@@ -1,4 +1,4 @@
-@import "normalize.css";
+@import "npm:normalize.css";
 @import "./fonts.css";
 
 body,
