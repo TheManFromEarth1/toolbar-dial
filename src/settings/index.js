@@ -6,7 +6,7 @@ import { wallpapers } from "../wallpapers";
 import { wallpaperStyles } from "../wallpapers/styles.js";
 import { css } from "@emotion/css";
 import { ColorPicker } from "./ColorPicker.js";
-import { About } from "../bookmarks/About.js";
+import { About } from "../bookmarks/AboutModal/About.js";
 
 const userAgent = navigator.userAgent.toLowerCase();
 const isMacOS = userAgent.includes("macintosh") ? true : false;
