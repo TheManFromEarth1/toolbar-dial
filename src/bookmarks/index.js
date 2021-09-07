@@ -3,7 +3,9 @@ import { css } from "@emotion/css";
 import { Theme } from "./themes/default";
 import { AlertBanner } from "./AlertBanner.js";
 import { WhatsNew } from "./WhatsNew.js";
-import { AboutModal } from "./AboutModal.js";
+import { AboutModal } from "./AboutModal";
+import { FolderModal } from "./FolderModal";
+import { BookmarkModal } from "./BookmarkModal";
 import { ContextMenu } from "useContextMenu";
 import { useOptions } from "useOptions";
 import { useBookmarks } from "useBookmarks";
@@ -102,6 +104,16 @@ export function Bookmarks() {
     setShowModal("about");
   }
 
+  function handleShowAddFolder() {
+    hideContextMenu();
+    setShowModal("add-folder");
+  }
+
+  function handleShowAddBookmark() {
+    hideContextMenu();
+    setShowModal("add-bookmark");
+  }
+
   const focusRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -146,6 +158,8 @@ export function Bookmarks() {
             menuCoords,
             linkID,
             linkURL,
+            handleShowAddFolder,
+            handleShowAddBookmark,
             handleShowWhatsNew,
             handleShowAbout,
             handleEscapeContext,
@@ -168,6 +182,12 @@ export function Bookmarks() {
       )}
       {showModal === "about" && (
         <AboutModal {...{ handleDismissModal, handleEscapeModal }} />
+      )}
+      {showModal === "add-folder" && (
+        <FolderModal {...{ handleDismissModal, handleEscapeModal }} />
+      )}
+      {showModal === "add-bookmark" && (
+        <BookmarkModal {...{ handleDismissModal, handleEscapeModal }} />
       )}
       <Theme
         {...{

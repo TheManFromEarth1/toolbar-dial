@@ -9,15 +9,13 @@ export const ContextMenu = ({
   linkID,
   handleShowWhatsNew,
   handleShowAbout,
+  handleShowAddFolder,
+  handleShowAddBookmark,
   handleEscapeContext,
   hideContextMenu,
 }) => {
-  const {
-    openLinkTab,
-    openAllTab,
-    deleteFolder,
-    deleteBookmark,
-  } = useBookmarks();
+  const { openLinkTab, openAllTab, deleteFolder, deleteBookmark } =
+    useBookmarks();
   const { openOptions } = useOptions();
 
   const contextRef = useRef(null);
@@ -270,6 +268,14 @@ export const ContextMenu = ({
             outline: 0;
           `}
         >
+          <ul>
+            <li>
+              <button onClick={handleShowAddBookmark}>Add bookmark</button>
+            </li>
+            <li>
+              <button onClick={handleShowAddFolder}>Add folder</button>
+            </li>
+          </ul>
           <ul>
             <li>
               <button onClick={handleopenOptions}>Customize</button>
