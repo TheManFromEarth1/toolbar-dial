@@ -7,23 +7,27 @@ const styles = css`
   padding: 25px;
 `;
 
-export const BookmarkModal = ({ handleDismissModal, handleEscapeModal }) => {
+export const BookmarkModal = ({
+  handleDismissModal,
+  handleEscapeModal,
+  type,
+}) => {
   return (
     <Modal
       {...{
         handleDismissModal,
         handleEscapeModal,
-        title: "Add Bookmark",
+        title: `Add ${type === "bookmark" ? "Bookmark" : "Folder"}`,
         width: "520px",
         height: "450px",
-        shiftTabFocus: () => {
-          let links = document.querySelectorAll("#about-modal a");
-          return links[links.length - 1];
-        },
+        initialFocus: () =>
+          document.querySelector("#bookmark-modal input#name"),
+        shiftTabFocus: () =>
+          document.querySelector("#bookmark-modal button.submit"),
       }}
     >
-      <div className={styles} id="about-modal">
-        <AddBookmark />
+      <div className={styles} id="bookmark-modal">
+        <AddBookmark {...{ type, handleDismissModal }} />
       </div>
     </Modal>
   );

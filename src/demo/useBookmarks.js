@@ -91,6 +91,10 @@ export function ProvideBookmarks({ children }) {
     setBookmarks(filter(allBookmarks[currentFolder.id]["bookmarks"]));
   }
 
+  function addBookmark() {}
+
+  function addFolder() {}
+
   function openLinkTab(url) {
     window.open(url, "toolbardial", "noopener,noreferrer");
   }
@@ -110,6 +114,8 @@ export function ProvideBookmarks({ children }) {
         moveBookmark,
         deleteBookmark,
         deleteFolder,
+        addBookmark,
+        addFolder,
         folders,
         openLinkTab,
         openAllTab,

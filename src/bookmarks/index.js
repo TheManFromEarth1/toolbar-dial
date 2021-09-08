@@ -2,9 +2,8 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { css } from "@emotion/css";
 import { Theme } from "./themes/default";
 import { AlertBanner } from "./AlertBanner.js";
-import { WhatsNew } from "./WhatsNew.js";
+import { WhatsNew } from "./WhatsNew";
 import { AboutModal } from "./AboutModal";
-import { FolderModal } from "./FolderModal";
 import { BookmarkModal } from "./BookmarkModal";
 import { ContextMenu } from "useContextMenu";
 import { useOptions } from "useOptions";
@@ -184,10 +183,14 @@ export function Bookmarks() {
         <AboutModal {...{ handleDismissModal, handleEscapeModal }} />
       )}
       {showModal === "add-folder" && (
-        <FolderModal {...{ handleDismissModal, handleEscapeModal }} />
+        <BookmarkModal
+          {...{ handleDismissModal, handleEscapeModal, type: "folder" }}
+        />
       )}
       {showModal === "add-bookmark" && (
-        <BookmarkModal {...{ handleDismissModal, handleEscapeModal }} />
+        <BookmarkModal
+          {...{ handleDismissModal, handleEscapeModal, type: "bookmark" }}
+        />
       )}
       <Theme
         {...{

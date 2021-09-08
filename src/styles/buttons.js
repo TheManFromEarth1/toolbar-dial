@@ -41,6 +41,12 @@ const defaultBtn = css`
   }
 `;
 
+const submitBtn = css`
+  ${defaultBtn}
+  background-color: #1565c0;
+  color: #fff;
+`;
+
 const dismissBtn = css`
   .color-scheme-light & {
     --dismiss-btn-hover-background-color: #aeaeae;
@@ -72,4 +78,4 @@ const dismissBtn = css`
   }
 `;
 
-export { defaultBtn, dismissBtn };
+export { submitBtn, defaultBtn, dismissBtn };

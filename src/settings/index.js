@@ -415,10 +415,10 @@ export const Settings = () => {
               </div>
               <div className="setting-wrapper setting-group">
                 <div className="setting-label">
-                  <div className="setting-title">Swap Name &amp; URL</div>
+                  <div className="setting-title">Use Name in Dial</div>
                   <div className="setting-description">
-                    The name of the bookmark will be displayed in the dial
-                    instead of the URL.
+                    The name of the bookmark will be displayed instead of the
+                    URL.
                   </div>
                 </div>
                 <div className="setting-option toggle">

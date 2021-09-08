@@ -1,4 +1,4 @@
-@import "npm:normalize.css";
+@import "~node_modules/normalize.css";
 @import "./fonts.css";
 
 body,

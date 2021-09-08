@@ -10,6 +10,7 @@ export const Modal = ({
   title,
   width,
   height,
+  initialFocus,
   shiftTabFocus,
 }) => {
   const styles = css`
@@ -118,7 +119,9 @@ export const Modal = ({
   const focusRef = useRef(null);
 
   useEffect(() => {
-    if (focusRef.current) {
+    if (initialFocus) {
+      initialFocus().focus();
+    } else if (focusRef.current) {
       focusRef.current.focus();
     }
   }, []);
